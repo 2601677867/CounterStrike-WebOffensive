@@ -1,0 +1,23 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+            environment-variable.
+
+Sending build context to Docker daemon  41.08MB
+[1/5] STEP 1/8: FROM debian:trixie-slim AS engine
+[1/5] STEP 2/8: RUN dpkg --add-architecture i386
+--> Using cache 438d11d8b17f3e69fa6b7af50389bfa3f32e86a1d917130c6e1525c568492ede
+--> 438d11d8b17f
+[1/5] STEP 3/8: RUN apt update && apt upgrade -y && apt -y --no-install-recommends install aptitude
+--> Using cache 7ffa8b52b8ef9d8badc913496e26339ff7ef2f800a3aa180f4b53e2b6863442a
+--> 7ffa8b52b8ef
+[1/5] STEP 4/8: RUN aptitude -y --without-recommends install git ca-certificates build-essential gcc-multilib g++-multilib libbsd-dev:i386 libsdl2-dev:i386 libfreetype-dev:i386 libopus-dev:i386 libbz2-dev:i386 libvorbis-dev:i386 libopusfile-dev:i386 libogg-dev:i386
+--> Using cache f69c57076650b12ee61c8bb0b596b9c11ca14210ca9c655904f7a191cb7889e4
+--> f69c57076650
+[1/5] STEP 5/8: ENV PKG_CONFIG_PATH=/usr/lib/i386-linux-gnu/pkgconfig
+--> Using cache c3c78051fa4c7c33e8bcb372a817934b269ae720d49547dc8c376a4d00e419bf
+--> c3c78051fa4c
+[1/5] STEP 6/8: WORKDIR /xash
+--> Using cache 20817db29d228d3db7c054e1a5a7baa8ced6f72855fc45228d29a032b0399f63
+--> 20817db29d22
+[1/5] STEP 7/8: RUN for attempt in 1 2 3; do         git -c http.version=HTTP/1.1 clone --depth 1 --branch merged --single-branch https://github.com/yohimik/xash3d-fwgs .         && git submodule update --init --recursive --depth 1         && break;         echo "xash3d-fwgs clone attempt ${attempt} failed" >&2;         rm -rf .git ./*;         if [ "$attempt" -eq 3 ]; then exit 1; fi;         sleep 5;     done
+Cloning into '.'...
