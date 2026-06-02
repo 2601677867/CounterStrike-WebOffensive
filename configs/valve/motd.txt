@@ -1,0 +1,14 @@
+Welcome to WebXash3D Dedicated Server Docker
+
+
+This server uses Docker.
+For more information visit
+https://github.com/yohimik/webxash3d-fwgs
+
+
+
+
+Love old-school gaming and Half-Life?
+Join us on Discord
+Half-Life https://discord.com/invite/halflife
+WebXash3D https://discord.gg/cRNGjWfTDd

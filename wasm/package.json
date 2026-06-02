@@ -1,0 +1,9 @@
+{
+  "name": "cs-web-server-wasm",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "cs16-client": "0.1.2",
+    "xash3d-fwgs": "1.2.2"
+  }
+}
